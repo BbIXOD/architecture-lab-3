@@ -6,7 +6,6 @@ import (
 	"log"
 
 	"golang.org/x/exp/shiny/driver"
-	//"golang.org/x/exp/shiny/imageutil" для рамки
 	"golang.org/x/exp/shiny/screen"
 	"golang.org/x/image/draw"
 	"golang.org/x/mobile/event/key"
@@ -152,9 +151,4 @@ func (pw *Visualizer) drawDefaultUI() {
 
 	pw.w.Fill(image.Rect(x-100, y+25, x+100, y-25), c, draw.Src)
 	pw.w.Fill(image.Rect(x-25, y+100, x+25, y-100), c, draw.Src)
-
-	// Малювання білої рамки.
-	//for _, br := range imageutil.Border(pw.sz.Bounds(), 10) {
-	//	pw.w.Fill(br, color.White, draw.Src)
-	//}
 }

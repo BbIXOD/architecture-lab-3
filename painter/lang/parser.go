@@ -2,7 +2,7 @@ package lang
 
 import (
 	"bufio"
-	"fmt"
+	"errors"
 	"io"
 	"strconv"
 	"strings"
@@ -68,8 +68,6 @@ func (p *Parser) finalResult() []painter.Operation {
 	return res
 }
 
-
-
 func (p *Parser) resetState() {
 	p.lastBgColor = nil
 	p.lastBgRect = nil
@@ -112,7 +110,7 @@ func (p *Parser) parse(commandLine string) error {
 	case "update":
 		p.updateOp = painter.UpdateOp
 	default:
-		return fmt.Errorf("could not parse command %v", commandLine)
+		return errors.New("invalid params")
 	}
 	return nil
 }

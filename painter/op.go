@@ -66,7 +66,6 @@ func (op *BlackRectangle) Do(t screen.Texture) bool {
 	return false
 }
 
-
 type CrossFigure struct {
 	X, Y int
 }
@@ -79,7 +78,7 @@ func (op *CrossFigure) Do(t screen.Texture) bool {
 }
 
 type MoveOperation struct {
-	X, Y int
+	X, Y    int
 	Crosses []*CrossFigure
 }
 
